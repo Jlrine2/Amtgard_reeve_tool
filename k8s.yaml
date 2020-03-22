@@ -1,0 +1,48 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: amtgard-reeve-tool
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: amtgard-reeve-tool
+  name: amtgard-reeve-tool-app
+  labels:
+    app: amtgard-reeve-tool-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: amtgard-reeve-tool-app
+  template:
+    metadata:
+      labels:
+        app: amtgard-reeve-tool-app
+    spec:
+      containers:
+      - name: test
+        image: jlrine2/amtgard-reeve-tool
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: amtgard-reeve-tool
+  name: amtgard-reeve-tool-lb
+  labels:
+    app: amtgard-reeve-tool-lb
+spec:
+  selector:
+    app: amtgard-reeve-tool-app
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      name: http
