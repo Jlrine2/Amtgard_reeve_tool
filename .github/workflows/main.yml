@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: docker login
+      env:
+        DOCKER_USERNAME: ${{ secrets.docker_user }}
+        DOCKER_PASSWORD: ${{ secrets.docker_password }}
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      
+    - name: build and push
+      run: docker build -t jlrine2/amtgard-reeve-tool . && docker push jlrine2/amtgard-reeve-tool
+
+    - name: save kubeconfig
+      uses: digitalocean/action-doctl@master
+      env:
+        DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      with:
+        args: kubernetes cluster kubeconfig show jlr-k8s > $GITHUB_WORKSPACE/.kubeconfig
+        
+      
+    - name: deploy to k8s
+      run: kubectl --kubeconfig=$GITHUB_WORKSPACE/.kubeconfig apply -f $GITHUB_WORKSPACE/k8s.yaml
