@@ -1,10 +1,72 @@
 .clock-widget {
     position: relative;
     width: 80vw;
-    height: 8vh;
+    height: 12vh;
     margin-bottom: 2vh;
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
     background: rgba(133, 133, 133, 0.83);
+}
+
+
+.clock-name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 14px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    
+    position: absolute;
+    left: 2vw;
+    margin-top: 1vh;
+}
+
+.clock-play {
+    display: flex;
+    position: absolute;
+    left: 35vw;
+    top: 5vh;
+}
+
+.clock-stop {
+    display: flex;
+    position: absolute;
+    left: 50vw;
+    top: 5vh;
+}
+
+.settings {
+    display: flex;
+    position: absolute;
+    left: 65vw;
+    top: 5vh;
+}
+
+.widget-type {
+    position: absolute;
+    display: flex;
+    left: 60vw;
+    top: 1vh;
+    margin-top: 0vh;
+}
+
+.counter {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 7vh;
+    line-height: 14px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    
+    
+    position: absolute;
+    display: flex;
+    left: 5vw;
+    top: 7vh;
 }
