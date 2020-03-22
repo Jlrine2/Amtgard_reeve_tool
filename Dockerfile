@@ -19,6 +19,6 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 ## From 'build' copy website to default nginx public folder
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist/Amtgard-reeve-tool /usr/share/nginx/html
 
 CMD ["nginx", "-g", "daemon off;"]
