@@ -1,8 +1,12 @@
 <div class="clock-widget">
     <p class="clock-name">clock-name</p>
     <p class="widget-type">CLOCK</p>
-    <img src="assets/clock-play.png" class="clock-play">
-    <img src="assets/clock-stop.png" class="clock-stop">
+    <button (click)=clock_play() class="clock-play">
+        <img src="assets/clock-play.png">
+    </button>
+    <button class="clock-stop">
+        <img src="assets/clock-stop.png" (click)="clock_pause()">
+    </button>
     <img src="assets/settings.png" class="settings">
-    <app-counter class="counter"></app-counter>
+    <p class="counter"> {{this.seconds | timeFormat}} </p>
 </div>

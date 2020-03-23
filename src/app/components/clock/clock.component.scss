@@ -26,6 +26,8 @@
 }
 
 .clock-play {
+    background: none;
+    border: none;
     display: flex;
     position: absolute;
     left: 35vw;
@@ -33,6 +35,8 @@
 }
 
 .clock-stop {
+    background: none;
+    border: none;
     display: flex;
     position: absolute;
     left: 50vw;
@@ -68,5 +72,4 @@
     position: absolute;
     display: flex;
     left: 5vw;
-    top: 7vh;
 }

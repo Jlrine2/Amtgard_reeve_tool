@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ClockComponent } from './components/clock/clock.component';
 import { NewWidgetComponent } from './components/new-widget/new-widget.component';
 import { WidgetDisplayComponent } from './components/widget-display/widget-display.component';
-import { CounterComponent } from './components/clock/counter/counter.component';
+import { TimeFormatPipe } from './time-format.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { CounterComponent } from './components/clock/counter/counter.component';
     ClockComponent,
     NewWidgetComponent,
     WidgetDisplayComponent,
-    CounterComponent
+    TimeFormatPipe,
   ],
   imports: [
     BrowserModule
