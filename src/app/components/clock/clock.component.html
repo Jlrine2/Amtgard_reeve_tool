@@ -4,8 +4,8 @@
         <p class="clock-name">clock-name</p>
         <p class="widget-type">CLOCK</p>
     </div>
-    <br/>
     <div class="bottom-row">
+        <p class="counter"> {{this.seconds | timeFormat}} </p>
         <button (click)=clock_play() class="clock-play">
             <img src="assets/clock-play.png">
         </button>
@@ -13,7 +13,6 @@
             <img src="assets/clock-stop.png" (click)="clock_pause()">
         </button>
         <img src="assets/settings.png" class="settings">
-        <p class="counter"> {{this.seconds | timeFormat}} </p>
     </div>
     
 

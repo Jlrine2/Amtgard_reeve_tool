@@ -1,10 +1,9 @@
 .clock-widget {
     position: relative;
-    width: 80vw;
-    height: 12vh;
+    height: 15vh;
     margin-bottom: 2vh;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 5vw;
+    margin-right: 5vw;
     border-radius: 15px;
     background: rgba(133, 133, 133, 0.83);
     display: flex;
@@ -16,62 +15,73 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 100%;
-    line-height: 14px;
+    font-size: 1.5rem;
     align-items: center;
     text-align: center;
     color: #000000;
 
     flex-direction: flex-start;
-    margin-top: 1vh;
+    margin-top: 0vh;
 }
 
 .clock-play {
     background: none;
     border: none;
-    left: 35vw;
-    top: 5vh;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .clock-stop {
     background: none;
     border: none;
-    left: 50vw;
-    top: 5vh;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .settings {
-    left: 65vw;
-    top: 5vh;
+    justify-self: flex-end;
+    margin-left: auto;
 }
 
 .widget-type {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+
     justify-self: flex-end;
-    align-self: flex-end;
     margin-left: auto;
     margin-right: 3vw;
     margin-top: 0vh;
+    margin-bottom: 0vh;
 }
 
 .counter {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 6vh;
+    font-size: 3rem;
     line-height: 14px;
     align-items: center;
     text-align: center;
     color: #000000;
     
-    left: 5vw;
+    flex-direction: flex-start;
 }
 
 .top-row {
     display: flex;
     flex-direction: row;
+    margin-bottom: 0vh;
+    height: 10%;
 }
 
 .bottom-row {
     display: flex;
     flex-direction: row;
+    margin-top: 0vh;
+    align-items: center;
 }
